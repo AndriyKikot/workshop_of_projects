@@ -111,6 +111,8 @@
         <main class="main">
             <div class="container">
                 
+                <!-- Stories start -->
+                
                 <div class="stories">
                     <div class="stories__item">
                         <img class="stories__preview" src="assets/images/stories/stories-1.jpg" alt="">
@@ -133,6 +135,26 @@
                         <time class="stories__date" datetime="2020-09-21 19:21">21.09.2020</time>
                     </div>
                 </div>
+                
+                <!-- Stories end -->
+                
+                <!-- Post start -->
+                
+                <div class="add-post">
+                    <form class="add-post__form" action="/" method="POST">
+                        <textarea class="add-post__textarea" name="post-text" placeholder="Напишите что-нибудь"></textarea>
+                        <div class="add-post__form-actions">
+                            <label class="add-post__file" for="add-post-file">
+                                <input type="file" id="add-post-file">
+                            </label>
+                            <button class="add-post__send" type="submit">
+                                <img src="assets/images/send.svg" alt="Отправить">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Post end -->
             </div>
         </main>
     </div>
