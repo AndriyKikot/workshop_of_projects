@@ -339,6 +339,11 @@ body {
 *:after {
   box-sizing: border-box; }
 
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
 /* Blocks */
 .page {
   overflow: hidden; }
@@ -367,7 +372,8 @@ body {
 .nav__item {
   position: relative; }
   .nav__item:hover .nav__link {
-    background-color: #3137c9; }
+    background-color: #3137c9;
+    text-decoration: none; }
   .nav__item:hover > .subnav {
     display: block; }
 
@@ -414,7 +420,8 @@ body {
   text-decoration: none;
   transition: background-color 0.2s ease-in-out; }
   .subnav__link:hover {
-    background-color: #2c31b4; }
+    background-color: #2c31b4;
+    text-decoration: none; }
 
 .search {
   width: 100%;
@@ -531,6 +538,10 @@ body {
     box-shadow: 0 7px 17px -10px rgba(49, 55, 201, 0.3); }
     .btn--blue:hover {
       background-color: #2c31b4; }
+  .btn--rounded {
+    border-radius: 0.41em; }
+  .btn--sm {
+    padding: 0.7em 1.25em; }
 
 .stories {
   display: grid;
@@ -675,13 +686,22 @@ body {
   .post__title--mb0 {
     margin-bottom: 0; }
 
+.post__subtitle {
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  margin-top: 3rem; }
+
 .post__description {
   font-size: 1.4rem;
   color: #d2d2d2; }
 
 .post__text {
   font-size: 1.4rem;
-  color: #fff; }
+  color: #fff;
+  border-bottom: 1px solid #1c1c1c;
+  padding-bottom: 1rem; }
   .post__text h2,
   .post__text h3,
   .post__text h4,
@@ -707,10 +727,7 @@ body {
   .post__text p {
     margin-bottom: 2rem; }
   .post__text a {
-    color: #3137c9;
-    text-decoration: none; }
-    .post__text a:hover {
-      text-decoration: underline; }
+    color: #3137c9; }
   .post__text table {
     margin-bottom: 2rem;
     width: 100%; }
@@ -729,10 +746,7 @@ body {
   color: #828282;
   line-height: 1.2; }
   .post__data a {
-    color: inherit;
-    text-decoration: none; }
-    .post__data a:hover {
-      text-decoration: underline; }
+    color: inherit; }
 
 .post__data-item:not(:last-child):after {
   content: "";
@@ -747,10 +761,7 @@ body {
 
 .post__read {
   font-size: 1.4rem;
-  color: #107eff;
-  text-decoration: none; }
-  .post__read:hover {
-    text-decoration: underline; }
+  color: #107eff; }
 
 .post__actions {
   display: flex;
@@ -760,11 +771,9 @@ body {
   color: #fff; }
   .post__actions a {
     color: inherit;
-    text-decoration: none;
     opacity: 0.6;
     transition: opacity 0.2s linear; }
     .post__actions a:hover {
-      text-decoration: underline;
       opacity: 1; }
 
 .post__actions-icon {
@@ -821,3 +830,113 @@ body {
   .pagination__link.active {
     background-color: #3137c9;
     box-shadow: 0 0 10px rgba(49, 55, 201, 0.15); }
+
+.related {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #1c1c1c; }
+
+.related__list {
+  display: flex;
+  flex-wrap: wrap; }
+
+.related__list-item {
+  width: 50%;
+  margin-bottom: 2.5rem; }
+
+.related__list-title {
+  font-size: 1.4rem;
+  color: #f3eba2;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; }
+  .related__list-title a {
+    color: inherit; }
+
+.related__list-date {
+  color: #828282;
+  font-size: 1.2rem; }
+
+.comments {
+  margin-top: 5rem; }
+
+.comments__item {
+  margin-bottom: 3rem; }
+  .comments__item > .comments {
+    padding-left: 3rem;
+    margin-top: 3rem; }
+
+.comments__header {
+  display: flex;
+  margin-bottom: 1.5rem; }
+
+.comments__avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%; }
+
+.comments__author {
+  font-size: 1.2rem;
+  flex-grow: 1;
+  padding-left: 1.5rem;
+  line-height: 1.4; }
+
+.comments__text {
+  font-size: 1.2;
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.3; }
+
+.comments__name {
+  color: #fff;
+  font-weight: 500; }
+
+.comments__pubdate {
+  color: #757575; }
+
+.comments__reply {
+  font-family: inherit;
+  font-size: 1.2rem;
+  color: #3137c9;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1.1; }
+  .comments__reply:hover {
+    text-decoration: underline; }
+
+.form__group {
+  margin-bottom: 1.5rem;
+  position: relative; }
+
+.form__control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #3f3f3f;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 1.4rem;
+  color: #fff;
+  box-shadow: none; }
+  .form__control::placeholder {
+    color: rgba(255, 255, 255, 0.2); }
+  .form__control:focus + .form__line {
+    width: 100%; }
+  .form__control--textarea {
+    height: 30px;
+    overflow: hidden;
+    resize: none; }
+
+.form__line {
+  width: 0;
+  height: 1px;
+  background-color: #3137c9;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: width 0.2s linear; }

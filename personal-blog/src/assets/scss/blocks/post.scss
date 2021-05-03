@@ -44,6 +44,14 @@
   }
 }
 
+.post__subtitle {
+  font-size: 1.6rem;
+  color: $white;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
 .post__description {
   font-size: 1.4rem;
   color: #d2d2d2;
@@ -52,6 +60,8 @@
 .post__text {
   font-size: 1.4rem;
   color: $white;
+  border-bottom: 1px solid #1c1c1c;
+  padding-bottom: 1rem;
 
   h2,
   h3,
@@ -95,11 +105,6 @@
 
   a {
     color: $blue;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 
   table {
@@ -127,10 +132,6 @@
 
   a {
     color: inherit;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -151,10 +152,6 @@
 .post__read {
   font-size: 1.4rem;
   color: #107eff;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .post__actions {
@@ -166,12 +163,10 @@
 
   a {
     color: inherit;
-    text-decoration: none;
     opacity: 0.6;
     transition: opacity 0.2s linear;
 
     &:hover {
-      text-decoration: underline;
       opacity: 1;
     }
   }
