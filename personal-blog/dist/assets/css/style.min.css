@@ -346,7 +346,11 @@ a {
 
 /* Blocks */
 .page {
-  overflow: hidden; }
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
 
 .page__title {
   font-size: 2.1rem;
