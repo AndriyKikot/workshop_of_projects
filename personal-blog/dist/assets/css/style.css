@@ -372,6 +372,10 @@ body {
     color: #fff;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 *,
 *:before,
 *:after {
@@ -388,13 +392,24 @@ a:hover {
 
 /* Blocks */
 .page {
+    min-height: 100vh;
     overflow: hidden;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .page__title {
     font-size: 2.1rem;
     color: #fff;
     margin-bottom: 3rem;
+}
+
+.page__title--center {
+    text-align: center;
 }
 
 .header {
@@ -407,6 +422,12 @@ a:hover {
     top: 0;
     right: 0;
     z-index: 1000;
+}
+
+@media screen and (max-width: 991px) {
+    .header {
+        width: 100%;
+    }
 }
 
 .header__left {
@@ -543,6 +564,12 @@ a:hover {
     z-index: 1000;
 }
 
+@media screen and (max-width: 991px) {
+    .sidebar {
+        display: none;
+    }
+}
+
 .sidebar__header {
     height: 180px;
     background-color: #121212;
@@ -571,6 +598,12 @@ a:hover {
 
 .main {
     padding: 10rem 0 8rem 300px;
+}
+
+@media screen and (max-width: 991px) {
+    .main {
+        padding-left: 0;
+    }
 }
 
 .container {
@@ -650,7 +683,7 @@ a:hover {
     box-shadow: 0 7px 17px -10px rgba(237, 48, 36, 0.3);
 }
 
-.btn--red:hover {
+.btn--red:hover, .btn--red:focus {
     background-color: #e51f13;
 }
 
@@ -659,7 +692,7 @@ a:hover {
     box-shadow: 0 7px 17px -10px rgba(49, 55, 201, 0.3);
 }
 
-.btn--blue:hover {
+.btn--blue:hover, .btn--blue:focus {
     background-color: #2c31b4;
 }
 
@@ -1178,15 +1211,24 @@ a:hover {
     text-decoration: underline;
 }
 
+.form--auth {
+    max-width: 28rem;
+    margin: 0 auto;
+}
+
 .form__group {
     margin-bottom: 1.5rem;
     position: relative;
 }
 
+.form__group--md {
+    margin-bottom: 2.5rem;
+}
+
 .form__control {
     display: block;
     width: 100%;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 0.75rem;
     background: none;
     border: none;
     border-bottom: 1px solid #3f3f3f;
@@ -1236,6 +1278,27 @@ a:hover {
     bottom: 0;
     z-index: 1;
     transition: width 0.2s linear;
+}
+
+.form__footer--center {
+    text-align: center;
+}
+
+.form__footer-list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.form__footer-list li {
+    margin: 0 0.5rem;
+}
+
+.form__footer-list a {
+    color: #fff;
 }
 
 .work {
@@ -1311,4 +1374,113 @@ a:hover {
     color: #fff;
     text-align: center;
     line-height: 1.3;
+}
+
+.cabinet {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.cabinet__form {
+    width: 34rem;
+}
+
+.cabinet__avatar {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding-left: 11rem;
+}
+
+.cabinet__avatar img {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.cabinet__file {
+    font-size: 1.4rem;
+    color: #3137c9;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.cabinet__file input {
+    display: none;
+}
+
+.cabinet__file:hover {
+    text-decoration: none;
+}
+
+.modal {
+    display: none;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+}
+
+.modal__content {
+    width: 100%;
+    max-width: 500px;
+    padding: 8rem;
+    background-color: #202020;
+    border-radius: 5px;
+    position: relative;
+}
+
+.modal__content--contact {
+    padding-bottom: 2.5rem;
+}
+
+.modal__close {
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    opacity: 0.5;
+    transition: opacity 0.2s linear, -webkit-transform 0.2s linear;
+    transition: transform 0.2s linear, opacity 0.2s linear;
+    transition: transform 0.2s linear, opacity 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+.modal__close:hover {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 1;
+}
+
+.modal__footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #b2b2b2;
+    font-size: 1.2rem;
+    margin-top: 4rem;
+}
+
+.modal__footer li {
+    margin: 0 0.5rem;
+}
+
+.modal__footer a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.modal__footer a:hover {
+    text-decoration: none;
 }
