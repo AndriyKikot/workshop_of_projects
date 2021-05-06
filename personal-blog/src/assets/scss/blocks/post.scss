@@ -4,6 +4,10 @@
   margin-bottom: 3rem;
   padding: 2.5rem;
   border-radius: 5px;
+
+  @include breakpoint($mobile) {
+    padding: 1.5rem;
+  }
 }
 
 .post__header {
@@ -29,6 +33,7 @@
   font-size: 1.8rem;
   color: $white;
   font-weight: 500;
+  line-height: 1.4;
 
   a {
     color: inherit;
@@ -39,8 +44,8 @@
     }
   }
 
-  &--mb0 {
-    margin-bottom: 0;
+  &--open {
+    margin-bottom: 0.75rem;
   }
 }
 
@@ -123,6 +128,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include breakpoint($mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .post__data {
@@ -132,6 +142,11 @@
 
   a {
     color: inherit;
+  }
+
+  @include breakpoint($mobile) {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
   }
 }
 
