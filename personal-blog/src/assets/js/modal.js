@@ -8,17 +8,22 @@ modalBtn.forEach(item => {
         let $this = event.currentTarget;
         let modalId = $this.getAttribute('data-modal');
         let modal = document.getElementById(modalId);
-        let modalContent = document.querySelector('.modal__content');
+        let modalContent = modal.querySelector('.modal__content');
 
         modalContent.addEventListener('click', event => {
             event.stopPropagation();
-        })
+        });
 
         modal.classList.add('show');
         body.classList.add('no-scroll');
 
-    })
-})
+        setTimeout(() => {
+            modalContent.style.transform = 'none';
+            modalContent.style.opacity = '1';
+        }, 1);
+
+    });
+});
 
 modalClose.forEach(item => {
     item.addEventListener('click', event => {
@@ -37,6 +42,12 @@ modal.forEach(item => {
 })
 
 function closedModal(currentModal) {
-    currentModal.classList.remove('show');
-    body.classList.remove('no-scroll');
+    let modalContent = currentModal.querySelector('.modal__content');
+
+    modalContent.removeAttribute('style');
+
+    setTimeout(() => {
+        currentModal.classList.remove('show');
+        body.classList.remove('no-scroll');
+    }, 200);
 }
