@@ -151,7 +151,7 @@
         
             <div class="sidebar__footer">
                 <a href="works.html" class="btn btn--red">Мои работы</a>
-                <button type="button" class="btn btn--blue">Написать мне</button>
+                <button type="button" class="btn btn--blue" data-modal="contact-modal">Написать мне</button>
             </div>
         </aside>
         <!-- Main -->
@@ -186,9 +186,109 @@
         </main>
     </div>
 
-    <div class="modal">
-        <video class="modal__video" src="" poster="https://via.placeholder.com/420x580"></video>
+    <div class="modal" id="story-modal">
+        <div class="modal__content modal__content--story">
+            <video class="modal__video" src="" poster="https://via.placeholder.com/420x580"></video>
+        </div>
+    </div>    <!-- Modal Start -->
+    
+    <div class="modal" id="contact-modal">
+    
+        <!-- modal-content start -->
+    
+        <div class="modal__content modal__content--contact">
+    
+            <button class="modal__close" type="button">
+                <img src="assets/images/close.svg" alt="Закрыть">
+            </button>
+    
+            <form action="/" class="form" method="POST">
+    
+                <div class="form__group form__group--md">
+                    <input type="text" class="form__control" placeholder="Ваше имя">
+                    <span class="form__line"></span>
+                </div>
+    
+                <div class="form__group form__group--md">
+                    <input type="email" class="form__control" placeholder="Ваш email">
+                    <span class="form__line"></span>
+                </div>
+    
+                <div class="form__group form__group--md">
+                    <textarea class="form__control form__control--textarea" placeholder="Текст сообщения"
+                        name=""></textarea>
+                    <span class="form__line"></span>
+                </div>
+    
+                <div class="form__footer">
+                    <div class="form__group form__group--md">
+                        <button class="btn btn--blue btn--rounded btn--sm" type="submit">Отправить</button>
+                    </div>
+                </div>
+    
+            </form>
+    
+            <ul class="modal__footer">
+                <li>
+                    email: <a href="mailto:info@mywebsite.ru">info@mywebsite.ru</a>
+                </li>
+                <li>
+                    тел: <a href="tel:+380951111111">+38(095)111-11-11</a>
+                </li>
+            </ul>
+    
+        </div>
+    
+        <!-- modal-content end -->
+    
     </div>
+    
+    <!-- Modal End -->    <!-- Modal Start -->
+    
+    <div class="modal">
+    
+        <!-- share-modal start -->
+    
+        <div class="modal__content">
+    
+            <button class="modal__close" type="button">
+                <img src="assets/images/close.svg" alt="Закрыть">
+            </button>
+    
+            <ul class="social">
+                <li class="social__item">
+                    <a href="#" class="social__link">
+                        <img src="assets/images/share/facebook.svg" alt="">
+                    </a>
+                </li>
+    
+                <li class="social__item">
+                    <a href="#" class="social__link">
+                        <img src="assets/images/share/twitter.svg" alt="">
+                    </a>
+                </li>
+    
+                <li class="social__item">
+                    <a href="#" class="social__link">
+                        <img src="assets/images/share/vk.svg" alt="">
+                    </a>
+                </li>
+    
+                <li class="social__item">
+                    <a href="#" class="social__link">
+                        <img src="assets/images/share/copy.svg" alt="">
+                    </a>
+                </li>
+            </ul>
+    
+        </div>
+    
+        <!-- share-modal end -->
+    
+    </div>
+    
+    <!-- Modal End -->
+
     <!-- JS -->
     <script src="assets/js/app.js"></script>
 </body>
